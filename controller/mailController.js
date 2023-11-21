@@ -3,7 +3,9 @@ import Mail from "../modals/mailModal.js";
 export const saveSentEmails = async (request, response) => {
     try {
         if (request.body) {
-            await Mail.create(request.body)
+            let sentmail = await Mail.create(request.body);
+            await sentmail.save();
+            response.send(req.body);
             return response.status(201).json({ message: 'Email saved successfully', success: true })
         }
     } catch (error) {
