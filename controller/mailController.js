@@ -5,7 +5,7 @@ export const saveSentEmails = async (request, response) => {
         if (request.body) {
             let sentmail = await Mail.create(request.body);
             await sentmail.save();
-            response.send(req.body);
+           
             return response.status(201).json({ message: 'Email saved successfully', success: true })
         }
     } catch (error) {
@@ -36,6 +36,7 @@ export const saveDraftEmails = async (request, response) => {
         if (request.body) {
             let draft=await Mail.create(request.body);
             await draft.save();
+            
             return response.status(201).json({ message: 'Draft Email saved successfully', success: true })
         }
     } catch (error) {
