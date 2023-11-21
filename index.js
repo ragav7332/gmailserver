@@ -11,4 +11,12 @@ app.use(express.json({ extended: true }))
 app.use('/', mailRoutes)
 Connection()
 
-app.listen(port, () => { console.log(`server is running on port ${port}`); })
+app.listen(port, async() => { 
+    try{
+        await Connection;
+        console.log("Database has been connected");
+    }catch(error){
+        console.log("Database has not been connected");
+    }
+    console.log(`server is running on port ${port}`); 
+})
