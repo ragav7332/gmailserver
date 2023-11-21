@@ -5,9 +5,9 @@ dotenv.config()
 
 mongoose.set('strictQuery', true);
 
-const Connection = ()=>{
+const Connection = async()=>{
     try {
-        mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true })
+        await mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true })
        console.log(`Connected to Database Successfully`);
     } catch (error) {
         console.log('Disconnected',error);
