@@ -12,7 +12,8 @@ app.use('/', mailRoutes)
 
 app.listen(port, async() => { 
     try{
-        await Connection;
+        let conn = await Connection;
+        console.log(conn);
         console.log("Database has been connected");
     }catch(error){
         console.log("Database has not been connected");
