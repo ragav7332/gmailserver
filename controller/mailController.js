@@ -34,7 +34,7 @@ export const getEmails = async (request, response) => {
 export const saveDraftEmails = async (request, response) => {
     try {
         if (request.body) {
-            let draft=await Mail.insertOne(request.body);
+            let draft=await Mail.create(request.body);
             await draft.save();
             response.send(req.body);
             return response.status(201).json({ message: 'Draft Email saved successfully', success: true })
