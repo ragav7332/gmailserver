@@ -1,0 +1,5 @@
+https://gmail-server-5jbn.onrender.com/emails/all-mail
+
+https://gmail-server-5jbn.onrender.com/emails/bin
+
+https://gmail-server-5jbn.onrender.com/emails/starred
