@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080;
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json({ extended: true }))
-app.use('/emails/', mailRoutes)
+app.use('/', mailRoutes)
 
 Connection();
 
