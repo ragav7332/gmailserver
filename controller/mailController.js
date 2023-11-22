@@ -3,8 +3,7 @@ import Mail from "../modals/mailModal.js";
 export const saveSentEmails = async (request, response) => {
     try {
         if (request.body) {
-            let sentmail = await Mail.create(request.body);
-            await sentmail.save();
+            await Mail.create(request.body);
            
             return response.status(201).json({ message: 'Email saved successfully', success: true })
         }
@@ -34,8 +33,7 @@ export const getEmails = async (request, response) => {
 export const saveDraftEmails = async (request, response) => {
     try {
         if (request.body) {
-            let draft=await Mail.create(request.body);
-            await draft.save();
+            await Mail.create(request.body);
             
             return response.status(201).json({ message: 'Draft Email saved successfully', success: true })
         }
